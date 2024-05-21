@@ -70,7 +70,7 @@ Uygulama artık `http://localhost:8000` adresinde çalışır durumda olacaktır
 ## Ekran Görüntüleri
 
 ### Ana Sayfa
-![Ana Sayfa](https://imgur.com/UAiqGAt)
+![Ana Sayfa](ss/UAiqGAt-Imgur.png)
 
 ## Katkıda Bulunma
 
