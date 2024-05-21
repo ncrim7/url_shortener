@@ -1,66 +1,85 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# URL Shortener
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Bu proje, uzun URL'leri kısa URL'lere dönüştüren basit bir Laravel uygulamasıdır. Kullanıcılar, uzun bir URL'i girerek kısa bir URL oluşturabilirler. Oluşturulan kısa URL'ye tıklayan kullanıcılar, otomatik olarak orijinal uzun URL'ye yönlendirilir.
 
-## About Laravel
+## Özellikler
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Uzun URL'leri kısaltma
+- Kısa URL'lerden orijinal URL'lere yönlendirme
+- Bootstrap kullanılarak modern ve kullanıcı dostu arayüz
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Kurulum
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Gereksinimler
 
-## Learning Laravel
+- PHP >= 7.3
+- Composer
+- MySQL
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Adımlar
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **Depoyu klonlayın:**
+    ```bash
+    git clone https://github.com/bomb1338/url-shortener.git
+    cd url-shortener
+    ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. **Bağımlılıkları yükleyin:**
+    ```bash
+    composer install
+    ```
 
-## Laravel Sponsors
+3. **Çevresel değişkenleri ayarlayın:**
+    `.env` dosyasını oluşturun ve yapılandırın:
+    ```bash
+    cp .env.example .env
+    ```
+    `.env` dosyasını açın ve veritabanı yapılandırmalarını yapın:
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=url_shortener
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+4. **Uygulama anahtarını oluşturun:**
+    ```bash
+    php artisan make:model Url -m
+    ```
 
-### Premium Partners
+5. **Veritabanını oluşturun ve migrasyonları çalıştırın:**
+    ```bash
+    php artisan migrate
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+6. **Geliştirme sunucusunu başlatın:**
+    ```bash
+    php artisan serve
+    ```
 
-## Contributing
+Uygulama artık `http://localhost:8000` adresinde çalışır durumda olacaktır.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Kullanım
 
-## Code of Conduct
+1. Ana sayfada, uzun URL'i girin ve "Shorten" butonuna tıklayın.
+2. Başarılı bir şekilde kısa URL oluşturulduğunda, kısa URL ekranda görüntülenecektir.
+3. Kısa URL'e tıkladığınızda, orijinal uzun URL'e yönlendirileceksiniz.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Ekran Görüntüleri
 
-## Security Vulnerabilities
+### Ana Sayfa
+![Ana Sayfa](https://imgur.com/UAiqGAt)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Katkıda Bulunma
 
-## License
+1. Bu projeyi forklayın.
+2. Yeni bir dal (branch) oluşturun: `git checkout -b yeni-ozellik`
+3. Değişikliklerinizi yapın ve commit edin: `git commit -m 'Yeni özellik ekle'`
+4. Dalınıza push yapın: `git push origin yeni-ozellik`
+5. Bir Pull Request açın.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Lisans
+
+Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
