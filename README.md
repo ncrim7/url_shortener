@@ -20,7 +20,7 @@ Bu proje, uzun URL'leri kısa URL'lere dönüştüren basit bir Laravel uygulama
 
 1. **Depoyu klonlayın:**
     ```bash
-    git clone https://github.com/bomb1338/url-shortener.git
+    git clone https://github.com/ncrim7/url-shortener.git
     cd url-shortener
     ```
 
